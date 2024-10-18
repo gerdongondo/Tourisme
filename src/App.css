@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  overflow: hidden; /* Pour éviter que le débordement du contenu ne crée des barres de défilement */
 }
 
 .App-logo {
@@ -36,3 +37,247 @@
     transform: rotate(360deg);
   }
 }
+
+.navbar {
+  padding: 10px 20px; /* Espacement interne */
+  position: relative; /* Pour le positionnement du menu */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optionnel : Ajouter une légère ombre */
+}
+
+.nav-links {
+  list-style: none; /* Retirer les puces */
+  display: flex; /* Disposition flexible */
+  margin: 0; /* Enlever la marge par défaut */
+  padding: 0; /* Enlever le remplissage par défaut */
+  margin-left: auto; /* Alignement à droite */
+}
+
+.nav-link {
+  color: #007bff; /* Couleur du texte */
+  text-decoration: none; /* Pas de soulignement */
+  padding: 10px 15px; /* Espacement autour du lien */
+  border-radius: 5px; /* Coins arrondis */
+  transition: background-color 0.3s; /* Transition pour l'effet au survol */
+}
+
+.nav-link:hover {
+  background-color: rgba(0, 123, 255, 0.1); /* Couleur de fond au survol (légèrement transparente) */
+}
+
+/* Styles pour le menu mobile */
+.menu-toggle {
+  display: none; /* Cacher le bouton par défaut */
+  flex-direction: column; /* Disposition en colonne */
+  cursor: pointer; /* Curseur pointer */
+}
+
+.bar {
+  height: 3px; /* Épaisseur de la barre */
+  width: 25px; /* Largeur de la barre */
+  background-color: #007bff; /* Couleur de la barre */
+  margin: 4px; /* Espacement entre les barres */
+  transition: all 0.3s; /* Transition pour l'effet au clic */
+}
+
+/* Afficher le menu toggle pour les écrans petits */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex; /* Afficher le bouton sur les petits écrans */
+  }
+  
+  .nav-links {
+    display: none; /* Cacher les liens par défaut */
+    flex-direction: column; /* Disposition en colonne pour mobile */
+    position: absolute; /* Positionner le menu */
+    top: 60px; /* Ajuster selon la hauteur de la barre de navigation */
+    right: 0; /* Alignement à droite */
+    width: 100%; /* Largeur pleine */
+    background-color: white; /* Ajoutez une couleur de fond */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optionnel : Ajouter une légère ombre */
+  }
+
+  .nav-links.active {
+    display: flex; /* Afficher les liens lorsque le menu est ouvert */
+  }
+
+  .nav-link {
+    text-align: center; /* Centrer le texte */
+    padding: 15px; /* Espacement autour du lien */
+    border-top: 1px solid rgba(0, 0, 0, 0.1); /* Ligne de séparation */
+  }
+
+  .nav-link:first-child {
+    border-top: none; /* Pas de ligne pour le premier lien */
+  }
+}
+
+/* Styles pour le titre des lieux touristiques */
+.titre-lieux {
+  font-size: 2rem; /* Taille de la police */
+  font-weight: bold; /* Gras */
+  color: #333; /* Couleur du texte */
+  text-align: center; /* Centrer le texte */
+  margin: 20px 0; /* Marge au-dessus et en dessous */
+  position: relative; /* Pour la ligne en dessous */
+}
+
+/* Ligne en dessous du titre */
+.titre-lieux::after {
+  content: ""; /* Contenu vide pour la ligne */
+  display: block; /* Afficher comme un bloc */
+  width: 60px; /* Largeur de la ligne */
+  height: 4px; /* Épaisseur de la ligne */
+  background-color: #007bff; /* Couleur de la ligne */
+  margin: 10px auto; /* Centre la ligne */
+  border-radius: 2px; /* Coins arrondis pour la ligne */
+}
+
+/* Styles pour le titre des plats sénégalais */
+.titre-plats {
+  font-size: 2rem; /* Taille de la police */
+  font-weight: bold; /* Gras */
+  color:  #333; /* Couleur du texte (jaune) */
+  text-align: center; /* Centrer le texte */
+  margin: 20px 0; /* Marge au-dessus et en dessous */
+  position: relative; /* Pour la ligne en dessous */
+}
+
+/* Ligne en dessous du titre */
+.titre-plats::after {
+  content: ""; /* Contenu vide pour la ligne */
+  display: block; /* Afficher comme un bloc */
+  width: 60px; /* Largeur de la ligne */
+  height: 4px; /* Épaisseur de la ligne */
+  background-color: #007bff; /* Couleur de la ligne (bleu clair) */
+  margin: 10px auto; /* Centre la ligne */
+  border-radius: 2px; /* Coins arrondis pour la ligne */
+}
+
+
+/* App.css */
+
+/* Styles pour le menu de navigation */
+.navbar {
+  background-color: #007bff; /* Couleur de fond bleu */
+  padding: 10px 20px; /* Espacement interne */
+  color: white; /* Couleur du texte en blanc */
+}
+
+.nav-links {
+  list-style: none; /* Retirer les puces */
+  display: flex; /* Disposition flexible */
+  margin: 0; /* Enlever la marge par défaut */
+  padding: 0; /* Enlever le remplissage par défaut */
+  margin-left: auto; /* Alignement à droite */
+}
+
+
+
+.nav-link {
+  color: white; /* Couleur du texte en blanc */
+  text-decoration: none; /* Pas de soulignement */
+  padding: 10px 15px; /* Espacement autour du lien */
+  border-radius: 5px; /* Coins arrondis */
+  transition: background-color 0.3s; /* Transition pour l'effet au survol */
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Couleur de fond au survol (légèrement transparente) */
+}
+
+
+.header-logo {
+  width: 100%; /* Prend 100% de la largeur de son conteneur */
+  height: auto; /* Maintient les proportions de l'image */
+  max-width: 100%; /* Évite que l'image dépasse son conteneur */
+  display: block; /* Supprime les espaces en dessous de l'image */
+}
+
+
+/* menu responsive  */
+/* Styles pour la barre de navigation */
+.navbar {
+  background-color: #007bff;
+  padding: 10px 20px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo dans le header */
+.header-logo {
+  width: 150px; /* Taille du logo pour petits écrans */
+  height: auto;
+  display: block;
+}
+
+/* Styles pour les liens de navigation */
+.nav-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Masquer les liens sur les petits écrans */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* Cacher les liens par défaut */
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    background-color: #007bff;
+  }
+
+  .nav-links.active {
+    display: flex; /* Afficher les liens quand le menu est activé */
+  }
+
+  .nav-link {
+    text-align: center;
+    padding: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .nav-link:first-child {
+    border-top: none;
+  }
+}
+
+/* Bouton pour mobile (menu hamburger) */
+.menu-toggle {
+  display: none; /* Masqué par défaut */
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 4px;
+  transition: all 0.3s;
+}
+
+/* Afficher le bouton sur les petits écrans */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex; /* Affiche le bouton hamburger sur les petits écrans */
+  }
+}
+
